@@ -3,21 +3,21 @@ import { MockRoutes } from "./routes/index.js";
 import cors from "cors";
 import bodyParser from "body-parser";
 
-const app=express();
+const app = express();
 
-const corsOptions={
-    origin:"http://localhost:3000",
-    methods:["GET","POST","PUT"]
-}
+const corsOptions = {
+  origin: ["http://localhost:3000", "http://localhost:3001"],
+  methods: ["GET", "POST", "PUT"],
+};
 
-app.use(cors(corsOptions))
+app.use(cors(corsOptions));
 
-app.use(bodyParser.urlencoded({extended:false }))
-app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
-app.use("/api",MockRoutes)
+app.use("/api", MockRoutes);
 
-const port=4000;
-app.listen(port,function(){
-    console.log(`This server is runing on http://localhost:${port}`)
-})
+const port = 4000;
+app.listen(port, function () {
+  console.log(`This server is runing on http://localhost:${port}`);
+});

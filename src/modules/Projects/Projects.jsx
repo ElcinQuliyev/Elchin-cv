@@ -1,7 +1,18 @@
-import React from 'react'
+import React from "react";
+import Github from "../Main/Github/Github";
+import CardBackground from "../../components/CardBackground";
+import RecentProject from "../Main/RecentProject/RecentProject";
+import { Flex } from "@chakra-ui/react";
 
 export default function Projects() {
   return (
-    <div>Projects</div>
-  )
+    <Flex flexDirection='column' gap={4}>
+      <CardBackground heading="GitHub Projects" isBlur>
+        <Github />
+      </CardBackground>
+      <CardBackground heading="Recent Projects" isBlur>
+        <RecentProject />
+      </CardBackground>
+    </Flex>
+  );
 }

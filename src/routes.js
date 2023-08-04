@@ -1,5 +1,5 @@
-export const ROUTES={
-    home:"/main",
-    projects:"/projects",
-    blogs:"/blogs"
-}
+export const ROUTES = {
+  home: "/main",
+  projects: "/projects",
+  blogs: "/techblogs",
+};
