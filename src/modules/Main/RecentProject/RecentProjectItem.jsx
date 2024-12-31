@@ -13,12 +13,13 @@ import { FiLink2 } from "react-icons/fi";
 import { BsStar } from "react-icons/bs";
 import { BiGitBranch } from "react-icons/bi";
 const colors = {
-  Pyhton:"blue",
+  Python:"blue",
   HTML: "red",
   TypeScript: "blue",
   JavaScript: "yellow",
 };
 const RecentProjectItem = ({ repo }) => {
+  
   const toast = useToast();
   const handleCopy = async () => {
     await navigator.clipboard.writeText(repo.clone_url);
