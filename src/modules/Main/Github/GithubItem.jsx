@@ -17,7 +17,6 @@ const colors = {
   JavaScript: "yellow",
 };
 const GithubItem = ({ repo }) => {
-  console.log(repo, "sss");
   const toast = useToast();
   const handleCopy = async () => {
     await navigator.clipboard.writeText(repo.clone_url);

@@ -8,7 +8,6 @@ import Loading from "../../../components/Loading";
 const RecentProject = () => {
   const { data: repos, isLoading } = useQuery(["getRepos"], getRepos);
 
-  // console.log(repos,'recentProject')
   if (isLoading) {
     return <Loading />;
   }
