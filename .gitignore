@@ -4,7 +4,8 @@
 /node_modules
 /.pnp
 .pnp.js
-/src/services
+/src/services/GithubService.js
+/src/services/ProfileService.js
 
 # testing
 /coverage
