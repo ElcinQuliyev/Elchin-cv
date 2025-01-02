@@ -3,7 +3,6 @@ import React from "react";
 import CardBackground from "../../components/CardBackground";
 import Github from "./Github/Github";
 import RecentProject from "./RecentProject/RecentProject";
-import TechsBlog from "../TechBlog/TechsBlog";
 import Footer from "../Footer/Footer";
 
 export default function Main() {
@@ -14,9 +13,6 @@ export default function Main() {
       </CardBackground>
       <CardBackground heading="Recent Projects">
         <RecentProject />
-      </CardBackground>
-      <CardBackground heading="Tech Stack" isBlur>
-        <TechsBlog />
       </CardBackground>
       <Footer />
     </Stack>

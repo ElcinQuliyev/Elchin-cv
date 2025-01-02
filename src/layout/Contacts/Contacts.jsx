@@ -1,4 +1,4 @@
-import { Stack } from "@chakra-ui/layout";
+import { Badge, Stack } from "@chakra-ui/layout";
 import React from "react";
 import { CiLocationOn } from "react-icons/ci";
 import { BsGithub } from "react-icons/bs";
@@ -7,6 +7,8 @@ import { MdEmail } from "react-icons/md";
 import ContactItem from "./ContactItem";
 
 const Contacts = ({ user }) => {
+  console.log(user);
+  
   if (user)
     return (
       <Stack w="full" fontSize='12px' spacing={6} py={4}>

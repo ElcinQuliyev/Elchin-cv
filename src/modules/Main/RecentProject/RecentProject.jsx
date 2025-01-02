@@ -20,7 +20,7 @@ const RecentProject = () => {
 
   return (
     <Grid templateColumns="repeat(2, 1fr)" gap={4}>
-      {recentPosts.slice(0, 2).map((repo) => (
+      {recentPosts.slice(0, 4).map((repo) => (
         <GithubItem repo={repo} />
       ))}
     </Grid>

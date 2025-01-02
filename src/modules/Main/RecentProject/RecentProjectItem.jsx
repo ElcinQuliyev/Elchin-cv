@@ -13,6 +13,7 @@ import { FiLink2 } from "react-icons/fi";
 import { BsStar } from "react-icons/bs";
 import { BiGitBranch } from "react-icons/bi";
 const colors = {
+  README: "📁",
   Python:"blue",
   HTML: "red",
   TypeScript: "blue",
@@ -37,6 +38,11 @@ const RecentProjectItem = ({ repo }) => {
   //  useColorModeValue
   const bg = useColorModeValue("white", "gray.800");
   const color = useColorModeValue("black", "gray.300");
+
+
+  const hasReadme = repo.contents_url && repo.contents_url.includes("README.md");
+  
+
 
   return (
     <GridItem
@@ -99,14 +105,28 @@ const RecentProjectItem = ({ repo }) => {
         </Flex>
 
         <Text display="flex" columnGap={1} alignItems="center" color="gray.600">
-          <Box
-            bg={colors[`${repo.language}`]}
-            w="16px"
-            h="16px"
-            borderRadius="xl"
-          ></Box>
-          {repo.language}
-        </Text>
+        {hasReadme ? (
+            <Box
+              display="flex"
+              alignItems="center"
+              bg="transparent"
+              color="gray.600"
+              fontSize="20px"
+            >
+              {colors[`${repo.language}`]} README
+            </Box>
+          ) : (
+            <>
+              <Box
+                bg={colors[`${repo.language}`]}
+                w="16px"
+                h="16px"
+                borderRadius="xl"
+              ></Box>
+              {repo.language}
+            </>
+          )}
+          </Text>
       </Flex>
     </GridItem>
   );
