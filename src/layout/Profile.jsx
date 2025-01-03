@@ -15,7 +15,7 @@ const Profile = ({ user, isLoading }) => {
     <Stack w="full" textAlign="center" alignItems="center" spacing={6}>
       <Avatar
         size="2xl"
-        name="Segun Adebayo"
+        name="Elcin Quliyev"
         src={user.imageUrl}
         bg="blue"
         outline="2px solid blue"
@@ -29,9 +29,9 @@ const Profile = ({ user, isLoading }) => {
         {user.interests.map((interest, idx) => {
           if (idx !== user.interests.length - 1) {
             return interest + " | ";
-          } else {
-            return interest;
-          }
+          } 
+          return interest;
+          
         })}{" "}
         ⚡
       </Text>
