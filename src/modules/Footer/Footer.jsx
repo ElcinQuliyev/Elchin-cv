@@ -6,6 +6,11 @@ const Footer = () => {
     <Flex
       w="45%"
       py={4}
+      style={
+        {
+          marginBottom: "14px",
+        }
+      }
       fontSize="md"
       borderRadius="md"
       justifyContent="center"
