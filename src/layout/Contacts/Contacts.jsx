@@ -11,7 +11,7 @@ const Contacts = ({ user }) => {
   
   if (user)
     return (
-      <Stack w="full" fontSize='12px' spacing={6} py={4}>
+      <Stack w="full" fontSize='12px'    spacing={6} py={4}>
         <ContactItem
           contactIcon={<CiLocationOn />}
           heading="Based in:"
