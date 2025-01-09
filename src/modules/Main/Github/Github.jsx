@@ -8,7 +8,6 @@ import Loading from "../../../components/Loading";
 const Github = () => {
   const { data: repos, isLoading } = useQuery(["getRepos"], getRepos);
 
-  // console.log(repos, "github");
   if (isLoading) {
     return <Loading />;
   }

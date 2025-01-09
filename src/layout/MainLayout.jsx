@@ -3,7 +3,6 @@ import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import CardBackground from "../components/CardBackground";
 import Loading from "../components/Loading";
-
 import Navbar from "../components/Navbar";
 import { getProfile } from "../services/ProfileService";
 import Contacts from "./Contacts/Contacts";
@@ -12,12 +11,12 @@ import Experience from "./Experience/Experience";
 import Profile from "./Profile";
 import Tech from "./Tech";
 import "../index.css";
-import Footer from "../modules/Footer/Footer";
+
 export default function MainLayout() {
   const { isLoading, data: user } = useQuery(["getProfile"], getProfile);
 
   return (
-    <Stack spacing={4} w="32%" className="Contents">
+    <Stack spacing={4}  w="32%" className="Contents">
       <Navbar />
       <CardBackground>
         {isLoading ? (
@@ -25,15 +24,14 @@ export default function MainLayout() {
         ) : (
           <Profile isLoading={isLoading} user={user} />
         )}
-      </CardBackground>
-      <CardBackground>
+      </CardBackground >
+      <CardBackground  >
         {isLoading ? <Loading /> : <Contacts user={user} />}
       </CardBackground>
 
       <CardBackground heading="Tech Stack">
         <Tech />
       </CardBackground>
-
       <CardBackground heading="Experience">
         <Experience />
       </CardBackground>

@@ -4,6 +4,7 @@ import { Heading, Stack, Text } from "@chakra-ui/layout";
 import React from "react";
 import Loading from "../components/Loading";
 import { useColorModeValue } from "@chakra-ui/react";
+import DownloadButton from "./DownloadButton";
 
 const Profile = ({ user, isLoading }) => {
   const color = useColorModeValue("balck", "gray.400");
@@ -17,8 +18,8 @@ const Profile = ({ user, isLoading }) => {
         size="2xl"
         name="Elcin Quliyev"
         src={user.imageUrl}
-        bg="blue"
-        outline="2px solid blue"
+        bg="#3182CE"
+        outline="3px solid #3182CE"
         outlineOffset={2}
       />
       <Heading as="h2" color={color} fontSize="xl">
@@ -35,15 +36,7 @@ const Profile = ({ user, isLoading }) => {
         })}{" "}
         ⚡
       </Text>
-      <Button
-        variant="outline"
-        size="sm"
-        colorScheme="blue"
-        fontWeight="medium"
-        textTransform="uppercase"
-      >
-        Download Resume
-      </Button>
+      <DownloadButton />
     </Stack>
   );
 };

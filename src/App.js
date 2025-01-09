@@ -4,6 +4,7 @@ import MainLayout from "./layout/MainLayout";
 import Main from "./modules/Main/Main";
 import Projects from "./modules/Projects/Projects";
 import { ROUTES } from "./routes";
+import TechStack from "./modules/Main/TachStack/TechStack";
 
 function App() {
   return (
@@ -13,6 +14,8 @@ function App() {
         <Routes>
           <Route path="" element={<Navigate to={ROUTES.home} />} />
           <Route path={ROUTES.home} element={<Main />} />
+          <Route path={ROUTES.blogs} element={<TechStack />} />
+
           <Route path={ROUTES.projects} element={<Projects />} />
           <Route path="*" element={<Heading as="h1">404 Not Found</Heading>} />
         </Routes>
