@@ -31,7 +31,7 @@ const Footer = () => {
         h={32}
         w={32} 
         bg={colorMode !== "light" ? "#151b27" : "white"}
-        src="../../../elcinlogo.png" />
+        src="../../elcinlogo.png" />
         <Text
           fontSize="lg"
           color="#90CDF4"
