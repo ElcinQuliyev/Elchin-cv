@@ -12,19 +12,27 @@ const RecentProject = () => {
     return <Loading />;
   }
 // Sual...?
-  let recentPosts = repos.sort(function (a, b) {
-    a = new Date(a.created_at);
-    b = new Date(b.created_at);
-    return a > b ? -1 : a < b ? 1 : 0;
-  });
-
+  // let recentPosts = repos.sort(function (a, b) {
+  //   a = new Date(a.created_at);
+  //   b = new Date(b.created_at);
+  //   return a > b ? -1 : a < b ? 1 : 0;
+  // });
+  let recentPosts = repos.filter((repo) => {
+    if (repo.language === "Python") {
+      let repoName = repo.name;
+      return repoName
+    }
+    return false
+  }
+  );
   return (
     <Grid templateColumns="repeat(2, 1fr)" gap={4}>
-      {recentPosts.slice(0, 4).map((repo) => (
-        <GithubItem repo={repo} />
+      {recentPosts.map((repo) => (
+        <GithubItem key={repo.id} repo={repo} />
       ))}
     </Grid>
   );
+
 };
 
 export default RecentProject;
