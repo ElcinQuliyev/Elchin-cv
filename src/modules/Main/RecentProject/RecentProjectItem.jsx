@@ -23,8 +23,6 @@ import { BiGitBranch } from "react-icons/bi";
 };
 
 const RecentProjectItem = ({ repo }) => {
-  console.log(repo.language);
-
   const toast = useToast();
 
   const handleCopy = async () => {
