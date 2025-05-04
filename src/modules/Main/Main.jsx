@@ -3,7 +3,7 @@ import React from "react";
 import CardBackground from "../../components/CardBackground";
 import Github from "./Github/Github";
 import RecentProject from "./RecentProject/RecentProject";
-import Footer from "../Footer/Footer";
+
 
 export default function Main() {
   return (
@@ -14,7 +14,6 @@ export default function Main() {
       <CardBackground heading="Recent Projects">
         <RecentProject />
       </CardBackground>
-      <Footer />
     </Stack>
   );
 }
