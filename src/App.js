@@ -5,9 +5,11 @@ import Main from "./modules/Main/Main";
 import Projects from "./modules/Projects/Projects";
 import { ROUTES } from "./routes";
 import TechStack from "./modules/Main/TachStack/TechStack";
+import Footer from "./modules/Footer/Footer";
 
 function App() {
   return (
+    <>
     <Flex w="95%" mx="auto" className="d-flex" mt={4} columnGap={6}>
       <MainLayout />
       <Box w="68%">
@@ -21,6 +23,8 @@ function App() {
         </Routes>
       </Box>
     </Flex>
+    <Footer />
+    </>
   );
 }
 
