@@ -11,12 +11,13 @@ const Github = () => {
   if (isLoading) {
     return <Loading />;
   }
+  const sliceItems = repos.slice(0, 17);
   return (
-    <Grid templateColumns="repeat(2, 1fr)" gap={4}>
-      {repos
+    <Grid  templateColumns="repeat(2, 1fr)" gap={4}>
+      {sliceItems
         .filter((x) => x.language)
         .map((repo) => (
-          <GithubItem repo={repo} />
+          <GithubItem key={repo.id} repo={repo} />
         ))}
     </Grid>
   );
