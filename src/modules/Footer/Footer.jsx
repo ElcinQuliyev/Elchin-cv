@@ -1,9 +1,31 @@
 import { Box, Flex, Image, Link, Text, useColorMode } from "@chakra-ui/react";
+import { useQuery } from "@tanstack/react-query";
 import { SlSocialGithub, SlSocialLinkedin } from "react-icons/sl";
 import { TbMail } from "react-icons/tb";
+import { getProfile } from "../../services/ProfileService";
 
-const Footer = () => {
+  const Footer = () => {
   const { colorMode } = useColorMode();
+  const { isLoading, data: user } = useQuery(["getProfile"], getProfile);
+  
+  if (isLoading) {
+    return (
+      <Flex
+        w="90%"
+        h="150px"
+        mx="auto"
+        mt={4}
+        mb={4}
+        fontSize="md"
+        borderRadius="md"
+        justifyContent="space-around"
+        alignItems="center"
+      >
+        Loading...
+      </Flex>
+    );
+  }
+  console.log(user);
 
   return (
     <Flex
@@ -31,7 +53,9 @@ const Footer = () => {
         h={32}
         w={32} 
         bg={colorMode !== "light" ? "#151b27" : "white"}
-        src="../../elcinlogo.png" />
+        src={user.logo ? user.logo : "Not Found"}
+        alt="Logo"
+         />
         <Text
           fontSize="lg"
           color="#90CDF4"
